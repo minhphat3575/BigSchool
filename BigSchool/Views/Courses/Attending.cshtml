@@ -47,12 +47,10 @@
     }
 </ul>
 
-
-@section scripts
-{
+@section scripts{
     <script>
-        $(document).ready(function () {
-            $('.js-tongle-attendance').click(function (e) {
+        $(document).ready(function (e){
+            $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/attendances", { courseId: button.attr("data-course-id") })
                     .done(function () {
@@ -66,7 +64,7 @@
                     });
 
             });
-            $('.js-tongle-follow').click(function (e) {
+            $(".js-toggle-follow").click(function (e){
                 var button = $(e.target);
                 $.post("/api/followings", { followeeId: button.attr("data-user-id") })
                     .done(function () {
@@ -74,8 +72,9 @@
                     })
                     .fail(function () {
                         alert("Something failed");
-                    });
+                    })
+            }
             });
-        });
+
     </script>
 }

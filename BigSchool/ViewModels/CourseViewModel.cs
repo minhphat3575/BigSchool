@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
 namespace BigSchool.ViewModels
 {
@@ -25,5 +26,7 @@ namespace BigSchool.ViewModels
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
+        public IEnumerable<Course> UpcomingCourses { get; set; }
+        public bool ShowAction { get; set; }
     }
 }
